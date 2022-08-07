@@ -2,9 +2,11 @@ import React from "react";
 import Form from "./Components/form";
 import List from "./Components/List";
 
+import "./style.scss";
+
 function App() {
   return (
-    <div className="App">
+    <div className="AppStyle">
       <Form />
       <List />
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.scss";
 
 const List: React.FC = () => {
   const tasks = [
@@ -11,7 +12,7 @@ const List: React.FC = () => {
       <ul>
         {tasks.map((item) => {
           return (
-            <li key={`${item.task}${item.time}`}>
+            <li key={`${item.task}${item.time}`} className="item">
               <h3>{item.task}</h3>
               <span>{item.time}</span>
             </li>
