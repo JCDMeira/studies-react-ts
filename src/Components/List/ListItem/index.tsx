@@ -9,7 +9,7 @@ interface ItemProps {
   time: string;
 }
 
-const ListItem = ({ item, style }: ListItemProps) => {
+const ListItem: React.FC<ListItemProps> = ({ item, style }): JSX.Element => {
   return (
     <li className={style.item}>
       <h3>{item.task}</h3>
