@@ -6,13 +6,20 @@ import style from "./app.module.scss";
 import Stopwatch from "./Components/Stopwatch";
 
 function App() {
+  const [tasks, setTask] = useState([
+    { task: "React", time: "02:00:00" },
+    { task: "Js", time: "02:00:00" },
+  ]);
   return (
     <div className={style.AppStyle}>
       <Form />
       <Stopwatch />
-      <List />
+      <List tasks={tasks} />
     </div>
   );
 }
 
 export default App;
+function useState(arg0: { task: string; time: string }[]): [any, any] {
+  throw new Error("Function not implemented.");
+}

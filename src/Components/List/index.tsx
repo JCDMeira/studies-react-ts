@@ -1,13 +1,13 @@
 import React from "react";
 import ListItem from "./ListItem";
 import style from "./List.module.scss";
+import taskProps from "../../models/tasks";
 
-const List: React.FC = () => {
-  const tasks = [
-    { task: "React", time: "02:00:00" },
-    { task: "Js", time: "02:00:00" },
-  ];
+interface ListProps {
+  tasks: taskProps[];
+}
 
+const List: React.FC<ListProps> = ({ tasks }) => {
   return (
     <aside>
       <h2>Estudos do dia</h2>
