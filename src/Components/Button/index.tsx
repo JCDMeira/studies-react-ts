@@ -4,11 +4,16 @@ import style from "./Button.module.scss";
 interface ButtonProps {
   text?: string;
   children?: ReactNode;
+  type?: "button" | "submit" | "reset" | undefined;
 }
 class Button extends Component<ButtonProps> {
   render(): React.ReactNode {
-    const { children } = this.props;
-    return <button className={style.Button}>{children}</button>;
+    const { type = "button" } = this.props;
+    return (
+      <button type={type} className={style.Button}>
+        {this.props.children}
+      </button>
+    );
   }
 }
 

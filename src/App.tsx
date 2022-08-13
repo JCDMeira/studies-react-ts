@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "./Components/form";
 import List from "./Components/List";
 
@@ -20,6 +20,3 @@ function App() {
 }
 
 export default App;
-function useState(arg0: { task: string; time: string }[]): [any, any] {
-  throw new Error("Function not implemented.");
-}
