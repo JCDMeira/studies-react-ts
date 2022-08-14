@@ -5,14 +5,14 @@ import List from "./Components/List";
 import style from "./app.module.scss";
 import Stopwatch from "./Components/Stopwatch";
 
+import taskType from "./types/tasks";
+
 function App() {
-  const [tasks, setTask] = useState([
-    { task: "React", time: "02:00:00" },
-    { task: "Js", time: "02:00:00" },
-  ]);
+  const [tasks, setTask] = useState<taskType[] | []>([]);
+
   return (
     <div className={style.AppStyle}>
-      <Form />
+      <Form setTask={setTask} />
       <Stopwatch />
       <List tasks={tasks} />
     </div>

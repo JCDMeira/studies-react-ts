@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Button from "../Button";
 import style from "./Form.module.scss";
-
-class Form extends Component {
+import setTaskType from "../../types/setTask";
+class Form extends Component<setTaskType> {
   state = {
     task: "",
     time: "00:00",
@@ -10,6 +10,11 @@ class Form extends Component {
 
   addTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    this.props.setTask((oldTasks) => [...oldTasks, { ...this.state }]);
+    this.setState({
+      task: "",
+      time: "00:00",
+    });
   };
 
   render(): React.ReactNode {

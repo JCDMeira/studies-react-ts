@@ -1,7 +1,7 @@
 import React from "react";
 import ListItem from "./ListItem";
 import style from "./List.module.scss";
-import taskProps from "../../models/tasks";
+import taskProps from "../../types/tasks";
 
 interface ListProps {
   tasks: taskProps[];
