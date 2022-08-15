@@ -1,6 +1,5 @@
 import React from "react";
 import ListItem from "./ListItem";
-import style from "./List.module.scss";
 import taskProps from "../../types/tasks";
 
 interface ListProps {
@@ -12,8 +11,8 @@ const List: React.FC<ListProps> = ({ tasks }) => {
     <aside>
       <h2>Estudos do dia</h2>
       <ul>
-        {tasks.map((item) => (
-          <ListItem key={item.task} item={item} style={style} />
+        {tasks.map((item: taskProps) => (
+          <ListItem key={item.task} {...item} />
         ))}
       </ul>
     </aside>
