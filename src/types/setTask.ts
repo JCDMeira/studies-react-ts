@@ -1,5 +1,5 @@
 interface setTaskType {
-  setTask: React.Dispatch<
+  setTasks: React.Dispatch<
     React.SetStateAction<
       {
         task: string;

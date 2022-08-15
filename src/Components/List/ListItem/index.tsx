@@ -16,7 +16,7 @@ const ListItem: React.FC<ListItemProps> = ({
 }): JSX.Element => {
   return (
     <li
-      className={style.item}
+      className={`${style.item} ${selected ? style.itemSelecionado : ""}`}
       onClick={() => handleSelect({ completed, id, selected, task, time })}
     >
       <h3>{task}</h3>

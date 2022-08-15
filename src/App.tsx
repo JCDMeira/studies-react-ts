@@ -8,14 +8,22 @@ import Stopwatch from "./Components/Stopwatch";
 import taskType from "./types/tasks";
 
 function App() {
-  const [tasks, setTask] = useState<taskType[] | []>([]);
+  const [tasks, setTasks] = useState<taskType[] | []>([]);
   const [selected, setSelected] = useState<taskType>();
 
-  const handleSelect = (selectedTask: taskType) => setSelected(selectedTask);
+  const handleSelect = (selectedTask: taskType) => {
+    setSelected(selectedTask);
+    setTasks((oldTasks) =>
+      oldTasks.map((task) => ({
+        ...task,
+        selected: task.id === selectedTask.id ? true : false,
+      }))
+    );
+  };
 
   return (
     <div className={style.AppStyle}>
-      <Form setTask={setTask} />
+      <Form setTasks={setTasks} />
       <Stopwatch />
       <List tasks={tasks} handleSelect={handleSelect} />
     </div>
