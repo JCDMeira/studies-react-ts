@@ -3,6 +3,8 @@ import ListItem from "./ListItem";
 import taskProps from "../../types/tasks";
 import taskType from "../../types/tasks";
 
+import style from "./List.module.scss";
+
 interface ListProps {
   tasks: taskProps[];
   handleSelect: (selectedTask: taskType) => void;
@@ -10,7 +12,7 @@ interface ListProps {
 
 const List: React.FC<ListProps> = ({ tasks, handleSelect }) => {
   return (
-    <aside>
+    <aside className={style.listaTarefas}>
       <h2>Estudos do dia</h2>
       <ul>
         {tasks.map((item: taskProps) => (

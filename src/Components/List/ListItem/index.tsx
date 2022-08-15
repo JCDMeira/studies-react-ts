@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../List.module.scss";
+import style from "./ListItem.module.scss";
 import taskType from "../../../types/tasks";
 
 interface ListItemProps extends taskType {
