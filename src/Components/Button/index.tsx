@@ -5,12 +5,13 @@ interface ButtonProps {
   text?: string;
   children?: ReactNode;
   type?: "button" | "submit" | "reset" | undefined;
+  onClick?: () => void;
 }
 class Button extends Component<ButtonProps> {
   render(): React.ReactNode {
     const { type = "button" } = this.props;
     return (
-      <button type={type} className={style.Button}>
+      <button type={type} className={style.Button} onClick={this.props.onClick}>
         {this.props.children}
       </button>
     );
