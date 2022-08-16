@@ -7,9 +7,10 @@ import taskType from "../../types/tasks";
 
 interface StopwatchProps {
   selected: taskType | undefined;
+  finishTask: () => void;
 }
 
-const Stopwatch: React.FC<StopwatchProps> = ({ selected }) => {
+const Stopwatch: React.FC<StopwatchProps> = ({ selected, finishTask }) => {
   const [currentTime, setCurrentTime] = useState<number>();
   useEffect(() => {
     if (selected?.time) {
@@ -22,6 +23,8 @@ const Stopwatch: React.FC<StopwatchProps> = ({ selected }) => {
       if (time > 0) {
         setCurrentTime(time - 1);
         return stopwatchCouter(time - 1);
+      } else {
+        finishTask();
       }
     }, 1000);
   };
