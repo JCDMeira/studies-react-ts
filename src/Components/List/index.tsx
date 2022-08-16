@@ -16,7 +16,7 @@ const List: React.FC<ListProps> = ({ tasks, handleSelect }) => {
       <h2>Estudos do dia</h2>
       <ul>
         {tasks.map((item: taskProps) => (
-          <ListItem key={item.task} handleSelect={handleSelect} {...item} />
+          <ListItem key={item.id} handleSelect={handleSelect} {...item} />
         ))}
       </ul>
     </aside>
